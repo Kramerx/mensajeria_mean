@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <h3>Grupo de chat</h3>
+      <app-mensajeria [mensajes]="mensajes" [user]="user" (createMessageEvent)="createMessage($event)"></app-mensajeria>
+    </div>
+  </div>
+</div>
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <app-ingreso (loginEvent)="validate($event)"></app-ingreso>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="backdrop" [ngStyle]="{'display':display}"></div>
