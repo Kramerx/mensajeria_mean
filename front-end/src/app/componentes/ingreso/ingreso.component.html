@@ -2,8 +2,9 @@
   <div class="card-body">
     <form (submit)="onSubmitLogin()">
       <div class="form-group">
-        <label for="email">Para poder ingresar necesita un username</label>
-        <input type="text" class="form-control" name="Username" [(ngModel)]="user.username" placeholder="Username" required>
+        <label for="email">{{msgInicio}}</label>
+        <input type="text" class="form-control" name="Username" 
+        [(ngModel)]="user.username" placeholder="Username" required>
       </div>
       <div class="col-md-6 offset-3">
         <input type="submit" value="ENVIAR" class="btn btn-primary btn-block btn-lg">
@@ -11,3 +12,4 @@
     </form>
   </div>
 </div>
+

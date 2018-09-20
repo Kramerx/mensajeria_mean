@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Usuario } from "../../modelo/usuario";
 
 @Component({
@@ -6,13 +6,11 @@ import { Usuario } from "../../modelo/usuario";
   templateUrl: './ingreso.component.html',
   styleUrls: ['./ingreso.component.css']
 })
-export class IngresoComponent implements OnInit {
+export class IngresoComponent {
+  msgInicio="Bienvenido"
   @Output() loginEvent = new EventEmitter();
   user = new Usuario;
   constructor() { }
-
-  ngOnInit() {
-  }
   
   onSubmitLogin(){
     this.loginEvent.emit(this.user);

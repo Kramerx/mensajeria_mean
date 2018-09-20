@@ -1,0 +1,5 @@
+.newTam{
+    height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}

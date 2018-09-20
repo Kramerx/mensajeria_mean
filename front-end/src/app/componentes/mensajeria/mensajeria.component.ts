@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Mensaje } from "../../modelo/mensaje";
 import { Usuario } from "../../modelo/usuario";
 
@@ -7,15 +7,12 @@ import { Usuario } from "../../modelo/usuario";
   templateUrl: './mensajeria.component.html',
   styleUrls: ['./mensajeria.component.css']
 })
-export class MensajeriaComponent implements OnInit {
+export class MensajeriaComponent{
   msg = new Mensaje()
   @Input() mensajes:Mensaje[]
   @Input() user: Usuario
   @Output() createMessageEvent = new EventEmitter();
   constructor() { }
-
-  ngOnInit() {
-  }
 
   newMessage() {
     if (this.msg.mensaje!=""){

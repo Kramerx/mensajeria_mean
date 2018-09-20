@@ -9,12 +9,10 @@ import { RestApiService } from "./servicio/rest-api.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  mensajes: Mensaje[] = [
-    // new Mensaje(0, "luis", "hola"),
-    // new Mensaje(1, "pedro", "como estas?")
-  ];
+  mensajes: Mensaje[] = [];
   user:Usuario = new Usuario;
   display='block';
+  
   constructor(
     private _service: RestApiService
   ) { }
@@ -22,21 +20,16 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.getMessages();
   }
-
   getMessages() {
-    // return this.mensajes;
     this._service.getMessages()
       .then(mensajes => this.mensajes = mensajes)
       .catch(err => console.log(err));
   }
-
   createMessage(msg: Mensaje) {
-    // this.mensajes.push(msg)
     this._service.createMsg(msg)
       .then(status => {this.getMessages()})
       .catch(err => console.log(err));
   }
-//agregar validacion por si ya existe
   validate(user:Usuario){
     if(user.username!=""){
       this.user.username=user.username;
@@ -46,11 +39,9 @@ export class AppComponent implements OnInit {
       this.openModalDialog()
     }
   }
-
   openModalDialog() {
     this.display = 'block';
   }
-
   closeModalDialog() {
     this.display = 'none';
   }

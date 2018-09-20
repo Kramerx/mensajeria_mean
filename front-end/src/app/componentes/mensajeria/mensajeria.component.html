@@ -1,24 +1,17 @@
-<div class="card h-100">
-  <div class="card-body">
+<div class="card">
+  <div class="card-body newTab">
     <div *ngFor="let m of mensajes">
       <div *ngIf=!valida(m)>
         <div class="row" align="center">
-          <div class="col-md-2">
-            <div class="rounded border p-1">{{m.username}}</div>
-          </div>
-          <div class="col-md-7">
-            <div class="rounded border p-1">{{m.mensaje}}</div>
-          </div>
-          <div class="col-md 3">
-          </div>
+          <div class="col-md-2"><div class="rounded border p-1">{{m.username}}</div></div>
+          <div class="col-md-7"><div class="rounded border p-1">{{m.mensaje}}</div></div>
+          <div class="col-md 3"></div>
         </div>
         <br>
       </div>
       <div *ngIf=valida(m)>
         <div class="row" align="center">
-          <div class="col-md-2">
-            <div class="rounded"></div>
-          </div>
+          <div class="col-md-2"><div class="rounded"></div></div>
           <div class="col-md-7">
             <div class="rounded border p-1 border-primary badge-primary">{{m.mensaje}}</div>
           </div>
@@ -42,25 +35,3 @@
     </div>
   </div>
 </div>
-<!-- <div class="row" align="center">
-  <div class="col-md-2">
-    <div class="rounded border p-1">Jose</div>
-  </div>
-  <div class="col-md-7">
-    <div class="rounded border p-1">Mensaje</div>
-  </div>
-  <div class="col-md 3">
-  </div>
-</div>
-<br>
-<div class="row" align="center">
-  <div class="col-md-2">
-    <div class="rounded"></div>
-  </div>
-  <div class="col-md-7">
-    <div class="rounded border p-1 border-primary badge-primary">Mensaje</div>
-  </div>
-  <div class="col-md 3">
-    <div class="rounded border p-1 border-primary badge-primary">User</div>
-  </div>
-</div> -->
